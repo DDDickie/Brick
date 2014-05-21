@@ -2,8 +2,8 @@
 
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
-#include "..\proj.win32\StartScene.h"
-#include "proj.win32\InitLoadingScene.h"
+#include "StartScene.h"
+#include "InitLoadingScene.h"
 
 USING_NS_CC;
 
