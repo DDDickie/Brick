@@ -30,6 +30,7 @@ bool BallManager::init()
 		this->addChild(ball);
 		this->addChild(paddle);
 		this->addChild(brickManager);
+		CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("sky_city.mp3",true);
 		setTouchEnabled(true);
 		bRet = true;
 	}while(0);
@@ -54,6 +55,7 @@ void BallManager::update(float delta)
 		if(!ball->isActive)
 		{
 			this->removeChild(ball);
+			CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("bg.wav",true);
 			CCDirector::sharedDirector()->replaceScene(Gameover::scene());
 			continue;
 		}
@@ -64,7 +66,7 @@ void BallManager::update(float delta)
 			brick = (Brick*)obj;
 			if(ball->collideWithBrick(brick))
 			{
-				
+				CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("WJ086.wav");
 				brickManager->updateBricks(delta,brick);
 				break;
 			}
@@ -112,5 +114,5 @@ void BallManager::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 
 void BallManager::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 {
-
+	
 }

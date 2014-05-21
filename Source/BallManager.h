@@ -6,6 +6,7 @@
 #include "BrickManager.h"
 #include "Gameover.h"
 #include "GlobalIncludeAndMacro.h"
+#include "SimpleAudioEngine.h"
 class BallManager:public Manager
 {
 public:
